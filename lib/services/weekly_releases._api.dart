@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_database/const/api.dart';
@@ -16,8 +15,7 @@ class WeeklyReleasesServices {
         final data = response.body.toString();
         final decode = jsonDecode(data);
         final weeklyReleasesModel = WeeklyReleasesModel.fromJson(decode);
-        debugPrint(weeklyReleasesModel.results![0].popularity.toString());
-        debugPrint(weeklyReleasesModel.results![0].originalTitle);
+
         return weeklyReleasesModel;
       } else {
         Get.snackbar('Error', response.statusCode.toString());

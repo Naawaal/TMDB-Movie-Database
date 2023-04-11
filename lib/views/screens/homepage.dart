@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_database/services/weekly_releases._api.dart';
+import 'package:get/get.dart';
+import 'package:movie_database/views/screens/weekly_release_screen.dart';
 import 'package:movie_database/views/widgets/textformfield.dart';
 import 'package:movie_database/views/widgets/week_releases.dart';
 
@@ -33,7 +34,9 @@ class HomepageScreen extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const WeeklyReleaseScreen());
+                  },
                   child: const Text(
                     'See All',
                     style: TextStyle(color: Colors.blue),
